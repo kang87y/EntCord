@@ -1,9 +1,1 @@
-let client = null;
-
-$.get("https://raw.githack.com/discordjs/discord.js/webpack/discord.master.min.js").done(e => {
-    client = new Discord.Client()
-});
-
-if (!Entry.variableContainer.getVariableByName('토큰').getValue() === "null" && client) {
-    client.login(Entry.variableContainer.getVariableByName('토큰').getValue()).then(e => alert(`${client.user.tag} is Login`)).catch(err=>alert(`Error...\n${err}`))
-}
+let client=null,t=false;$.get("https://raw.githack.com/discordjs/discord.js/webpack/discord.master.min.js").done(e=>client=new Discord.Client());let set=setInterval(()=>{if(Entry.variableContainer.getVariableByName('token').getValue()!="null"&&client&&client.user==null&&!t){client.login(Entry.variableContainer.getVariableByName('token').getValue()).then(e=>{alert(client.user.tag)}).catch(err=>{alert(err)});clearInterval(set);t=true}},100);
