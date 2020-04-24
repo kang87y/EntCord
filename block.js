@@ -330,10 +330,10 @@ const updateCategory = (category, options) => {
     }
 }
 
-const addBlock = (blockname, template, color, params, _class, func, skeleton = 'basic') => {
+const addBlock = (blockname, template, params, _class, func, skeleton = 'basic') => {
     Entry.block[blockname] = {
-        color: color.color,
-        outerLine: color.outerline,
+        color: EntryStatic.colorSet.block.default.HARDWARE,
+        outerLine: EntryStatic.colorSet.block.darken.HARDWARE,
         skeleton: skeleton,
         statement: [],
         params: params.params,
@@ -350,9 +350,6 @@ const addBlock = (blockname, template, color, params, _class, func, skeleton = '
 }
 
 addBlock('login', '디스코드 봇 %1 (으)로 로그인하기%2', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE
-}, {
     params: [
         {
             type: 'Block',
@@ -380,9 +377,6 @@ addBlock('login', '디스코드 봇 %1 (으)로 로그인하기%2', {
 })
 
 /*addBlock('set_activity', '디스코드 봇 상태메세지를 %1 %2 (으)로 설정하기%3', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE
-}, {
     params: [
         {
             type: 'Block',
@@ -429,9 +423,6 @@ addBlock('login', '디스코드 봇 %1 (으)로 로그인하기%2', {
 })*/
 
 addBlock('username', '디스코드 봇 이름', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
-}, {
     params: [],
     def: [],
     map: {}
@@ -442,9 +433,6 @@ addBlock('username', '디스코드 봇 이름', {
 }, 'basic_string_field');
 
 addBlock('id', '디스코드 봇 ID', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
-}, {
     params: [],
     def: [],
     map: {}
@@ -455,9 +443,6 @@ addBlock('id', '디스코드 봇 ID', {
 }, 'basic_string_field');
 
 addBlock('tag', '디스코드 봇 태그', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
-}, {
     params: [],
     def: [],
     map: {}
@@ -468,9 +453,6 @@ addBlock('tag', '디스코드 봇 태그', {
 }, 'basic_string_field');
 
 addBlock('discriminator', '디스코드 봇 태그(숫자)', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
-}, {
     params: [],
     def: [],
     map: {}
@@ -481,9 +463,6 @@ addBlock('discriminator', '디스코드 봇 태그(숫자)', {
 }, 'basic_string_field');
 
 addBlock('message_command', '유저가 %1 라고 보내면 %2 라고 대답하기%3', {
-    color: EntryStatic.colorSet.block.default.HARDWARE,
-    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
-}, {
     params: [
         {
             type: 'Block',
