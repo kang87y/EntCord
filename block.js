@@ -1,12 +1,11 @@
 /**
- * EntCord 1.0.1 - Beta
+ * EntCord 1.0.11 - Beta
  */
 
-let client = null
 
-$.get("https://raw.githack.com/discordjs/discord.js/webpack/discord.master.min.js").done(res => {
-    client = new Discord.Client()
-});
+//Load Discord.js master
+let client=null;
+$.get("https://raw.githack.com/discordjs/discord.js/webpack/discord.master.min.js").done(res=>client = new Discord.Client());
 
 Entry.staticBlocks = [
     {
