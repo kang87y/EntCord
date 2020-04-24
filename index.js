@@ -1,5 +1,5 @@
 /**
- * EntCord 1.0.0 - Beta
+ * EntCord 1.0.1 - Beta
  */
 
 let client = null
@@ -379,7 +379,7 @@ addBlock('login', '디스코드 봇 %1 (으)로 로그인하기%2', {
     return script.callReturn()
 })
 
-addBlock('set_activity', '디스코드 봇 상메를 %1 %2 (으)로 설정하기%3', {
+/*addBlock('set_activity', '디스코드 봇 상태메세지를 %1 %2 (으)로 설정하기%3', {
     color: EntryStatic.colorSet.block.default.HARDWARE,
     outerLine: EntryStatic.colorSet.block.darken.HARDWARE
 }, {
@@ -421,14 +421,44 @@ addBlock('set_activity', '디스코드 봇 상메를 %1 %2 (으)로 설정하기
 }, 'text', (sprite, script) => {
     if (!client.user) return Entry.toast.alert("경고", "봇 로그인을 먼저 해주세요.", true);
 
-    eval(`client.user.setActivity('${script.getValue("CONTENT", script)}', { type: '${script.getValue("TYPE", script)}' })`)
+    client.on('ready', () => {
+        return client.user.setActivity(script.getValue("CONTENT", script), { type: script.getValue("TYPE", script) })
+    })
+
     return script.callReturn()
-})
+})*/
+
+addBlock('username', '디스코드 봇 이름', {
+    color: EntryStatic.colorSet.block.default.HARDWARE,
+    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
+}, {
+    params: [],
+    def: [],
+    map: {}
+}, 'text', (sprite, script) => {
+    //if (!client.user) return Entry.toast.alert("경고", "봇 로그인을 먼저 해주세요.", true)
+
+    return client.user.username
+}, 'basic_string_field');
+
+addBlock('id', '디스코드 봇 ID', {
+    color: EntryStatic.colorSet.block.default.HARDWARE,
+    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
+}, {
+    params: [],
+    def: [],
+    map: {}
+}, 'text', (sprite, script) => {
+    //if (!client.user) return Entry.toast.alert("경고", "봇 로그인을 먼저 해주세요.", true)
+
+    return client.user.id
+}, 'basic_string_field');
 
 Entry.staticBlocks.push({
     category: 'EntCord', blocks: [
         'login',
-        'set_activity'
+        'username',
+        'id'
     ]
 });
 
