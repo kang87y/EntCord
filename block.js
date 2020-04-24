@@ -454,11 +454,86 @@ addBlock('id', '디스코드 봇 ID', {
     return client.user.id
 }, 'basic_string_field');
 
+addBlock('tag', '디스코드 봇 태그', {
+    color: EntryStatic.colorSet.block.default.HARDWARE,
+    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
+}, {
+    params: [],
+    def: [],
+    map: {}
+}, 'text', (sprite, script) => {
+    //if (!client.user) return Entry.toast.alert("경고", "봇 로그인을 먼저 해주세요.", true)
+
+    return client.user.tag
+}, 'basic_string_field');
+
+addBlock('discriminator', '디스코드 봇 태그(숫자)', {
+    color: EntryStatic.colorSet.block.default.HARDWARE,
+    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
+}, {
+    params: [],
+    def: [],
+    map: {}
+}, 'text', (sprite, script) => {
+    //if (!client.user) return Entry.toast.alert("경고", "봇 로그인을 먼저 해주세요.", true)
+
+    return client.user.tag
+}, 'basic_string_field');
+
+addBlock('message_command', '유저가 %1 라고 보내면 %2 라고 대답하기%3', {
+    color: EntryStatic.colorSet.block.default.HARDWARE,
+    outerLine: EntryStatic.colorSet.block.darken.HARDWARE 
+}, {
+    params: [
+        {
+            type: 'Block',
+            accept: 'string'
+        },
+        {
+            type: 'Block',
+            accept: 'string'
+        },
+        {
+            type: 'Indicator',
+            img: 'block_icon/hardware_icon.svg',
+            size: 11,
+        }
+    ],
+    def: [
+        {
+            type: 'text',
+            params: ['!안녕']
+        },
+        {
+            type: 'text',
+            params: ['안녕하세요!']
+        },
+        null
+    ],
+    map: {
+        CONTENT: 0,
+        COMMAND: 1
+    }
+}, 'text', (sprite, script) => {
+    //if (!client.user) return Entry.toast.alert("경고", "봇 로그인을 먼저 해주세요.", true)
+
+    client.on('message', async message => {
+        if(message.content==script.getValue("CONTENT", script)){
+            message.channel.send(script.getValue("COMMAND", script))
+        }
+    })
+
+    return script.callReturn()
+});
+
 Entry.staticBlocks.push({
     category: 'EntCord', blocks: [
         'login',
+        'message_command',
         'username',
-        'id'
+        'id',
+        'tag',
+        'discriminator'
     ]
 });
 
