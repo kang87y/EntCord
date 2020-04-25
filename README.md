@@ -17,5 +17,3 @@ $.get("https://raw.githack.com/ditto7890/EntCord/master/block.js")
 라고 입력해주시면 됩니다.
 
 ## 결과
-
-![Result](./img/result.png)
