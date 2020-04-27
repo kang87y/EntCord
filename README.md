@@ -1,12 +1,14 @@
 # EntCord
 
+[![ditto7890](https://img.shields.io/badge/made%20by-ditto7890%235158-green?style=for-the-badge&logo=discord&logoColor=white)](https://discordapp.com)
+
 **EntCord**란?
 
 * [엔트리](https://playentry.org/)에서 [Discord](https://discordapp.com/) Bot 을 작동시킬 수 있는 기능입니다.
 
 현재는 베타라서 오류가 많을 수 있습니다.
 
-코드 참고: [thoratica](https://github.com/thoratica)님의 [EntBlocks](https://github.com/thoratica/EntBlocks)(을)를 많이 참고하였습니다.
+코드 참고: [thoratica](https://github.com/thoratica)님의 [EntBlocks](https://github.com/thoratica/EntBlocks)을(를) 많이 참고하였습니다.
 
 디스코드 봇 로그인 등: [discord.js webpack](https://github.com/discordjs/discord.js/tree/webpack) ([discord.js](https://discord.js.org/))
 
