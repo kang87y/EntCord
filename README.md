@@ -6,9 +6,12 @@
 
 현재는 베타라서 오류가 많을 수 있습니다.
 
+코드 참고: [thoratica](https://github.com/thoratica)님의 [EntBlocks](https://github.com/thoratica/EntBlocks)(을)를 많이 참고하였습니다.
+디스코드 봇 로그인 등: [discord.js webpack](https://github.com/discordjs/discord.js/tree/webpack) ([discord.js](https://discord.js.org/))
+
 ## 사용법
 
-[엔트리 작품 만들기](https://playentry.org/ws#!/)에 들어가 개발자 도구(F12 or Ctrl + Shift + I) 콘솔에
+[엔트리 작품 만들기](https://playentry.org/ws#!/)에 들어가 개발자 도구(F12 or Ctrl + Shift + J) 콘솔에
 
 ```js
 $.get("https://raw.githack.com/ditto7890/EntCord/master/block.js")
