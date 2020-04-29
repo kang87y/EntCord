@@ -20,15 +20,17 @@ $.get('https://raw.githack.com/ditto7890/EntCord/master/block.js')
 
 라고 입력해주시면 됩니다.
 
-## 결과 (v1.0.2)
+## 결과 (v2.0)
 
-![Result](./img/result-1.0.2.png)
+![Result](./img/result-2.0.png)
 
 ## 업데이트
 
+2.0 - 많은 블럭 추가
+
 1.0.2 - [EntBlocks](https://github.com/thoratica/EntBlocks)이(가) 업데이트 됨에 따라 코드 수정
 
-1.0.12 - 악용 방지 테스트, .gitignore 추가, 코드를 불러왔을 때 콘솔 메세지 추가, 결과 이미지 수정
+1.0.12 - 악용 방지 테스트, 코드를 불러왔을 때 콘솔 메세지 추가
 
 1.0.11 - 색깔 변경, 상태메세지 설정 삭제
 
