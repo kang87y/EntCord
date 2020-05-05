@@ -9,7 +9,7 @@ const g = (s, c, t = 'text/javascript') => {
 const v = '2.0';
 g('https://raw.githack.com/discordjs/discord.js/webpack/discord.master.min.js', () => c = new Discord.Client());
 const l = {
-    start: (blocksJSON, category, text) => {
+    s: (blocksJSON, category, text) => {
         let blockArray = new Array;
         Entry.staticBlocks = [{
             category: 'start',
@@ -130,14 +130,15 @@ const l = {
             }
         };
 
-        function addBlock(blockname, template, params, _class, func, skeleton = 'basic') {
+        function addBlock(blockname, template, events, event, params, _class, func, skeleton = 'basic') {
             Entry.block[blockname] = {
                 color: EntryStatic.colorSet.block.default.HARDWARE,
                 outerLine: EntryStatic.colorSet.block.darken.HARDWARE,
                 skeleton,
                 statement: [],
                 params: params.params,
-                events: {},
+                events: events ? events : {},
+                event: event ? event : "default",
                 def: {
                     params: params.define,
                     type: blockname
@@ -151,7 +152,7 @@ const l = {
         for (let i in blocksJSON) {
             let block = blocksJSON[i];
             blockArray.push(block.name);
-            addBlock(block.name, block.template, {
+            addBlock(block.name, block.template, block.events, block.event, {
                 params: block.params,
                 define: block.def,
                 map: block.map
@@ -161,7 +162,7 @@ const l = {
             category: category,
             blocks: blockArray
         });
-        if (typeof useWebGL == "undefined") {
+        if (typeof useWebGL === "undefined") {
             updateCategory(category)
         };
         let css = document.createElement('style');
@@ -192,10 +193,10 @@ const b = [{
     class: 'login',
     func: (sprite, script) => {
         if (!c.user) {
-            c.login(script.getValue("TOKEN", script)).then(e => alert(`${c.user.tag}is Login`)).catch(e => alert(e))
+            c.login(script.getValue("TOKEN", script)).then(e => alert(`${c.user.tag} is Login`)).catch(e => alert(e))
         } else {
             c.destroy();
-            c.login(script.getValue("TOKEN", script)).then(e => alert(`${c.user.tag}is Login`)).catch(e => alert(e))
+            c.login(script.getValue("TOKEN", script)).then(e => alert(`${c.user.tag} is Login`)).catch(e => alert(e))
         };
         return script.callReturn()
     }
@@ -525,7 +526,8 @@ const b = [{
             ['ID', 'id'],
             ['태그', 'tag'],
             ['태그(숫자)', 'discriminator'],
-            ['아바타', 'avatar']
+            ['아바타', 'avatar'],
+            ['디스코드 가입 날짜', 'createdAt']
         ],
         fontSize: 11,
         arrowColor: '#FFD974',
@@ -728,4 +730,4 @@ const b = [{
         return v
     }
 }];
-l.start(b, 'EntCord', 'EntCord')
+l.s(b, 'EntCord', 'EntCord')

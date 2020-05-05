@@ -10,12 +10,13 @@
 
 디스코드 봇 로그인 등: [discord.js webpack](https://github.com/discordjs/discord.js/tree/webpack) ([discord.js](https://discord.js.org/))
 
-## 사용법
+## 사용 방법
 
 [엔트리 작품 만들기](https://playentry.org/ws#!/)에 들어가 개발자 도구(F12 or Ctrl + Shift + J) 콘솔에
 
 ```js
-$.get('https://raw.githack.com/ditto7890/EntCord/master/block.js')
+$.get('https://raw.githack.com/ditto7890/EntCord/master/block.js') //최신 버전
+$.get('https://raw.githack.com/ditto7890/EntCord/master/block_.js') //latest 버전
 ```
 
 라고 입력해주시면 됩니다.
