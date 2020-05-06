@@ -10,6 +10,8 @@
 
 디스코드 봇 로그인 등: [discord.js webpack](https://github.com/discordjs/discord.js/tree/webpack) ([discord.js](https://discord.js.org/))
 
+[예제 작품](http://naver.me/xmfjxsYJ)
+
 ## 사용 방법
 
 [엔트리 작품 만들기](https://playentry.org/ws#!/)에 들어가 개발자 도구(F12 or Ctrl + Shift + J) 콘솔에
