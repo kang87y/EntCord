@@ -1,13 +1,9 @@
 let c = null;
-const g = (s, c, t = 'text/javascript') => {
-    let r = document.createElement('script');
-    r.src = s;
-    r.onload = c;
-    r.type = t;
-    document.body.appendChild(r)
+if (Entry.userAgent.includes('Firefox')) {
+    console.log('Firefox 브라우저는 지원하지 않습니다.\n죄송하지만 Chrome, Naver Whale 등의 브라우저를 이용해 주세요.')
 };
+fetch('https://raw.githack.com/discordjs/discord.js/webpack/discord.master.min.js').then(e => e.text()).then(a => eval(a)).then(() => c = new Discord.Client());
 const v = '2.0';
-g('https://raw.githack.com/discordjs/discord.js/webpack/discord.master.min.js', () => c = new Discord.Client());
 const l = {
     s: (blocksJSON, category, text) => {
         let blockArray = new Array;
@@ -726,8 +722,6 @@ const b = [{
     def: [],
     map: {},
     class: 'entcord',
-    func: (sprite, script) => {
-        return v
-    }
+    func: (sprite, script) => v
 }];
 l.s(b, 'EntCord', 'EntCord')
